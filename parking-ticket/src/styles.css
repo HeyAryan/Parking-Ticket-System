@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.success-snackbar .mdc-snackbar__surface{
+    background-color: green !important;
+}
+.info-snackbar .mdc-snackbar__surface{
+        background:rgb(98, 98, 213) !important;
+}
+.error-snackbar .mdc-snackbar__surface{
+        background:rgb(226, 89, 89) !important;
+}

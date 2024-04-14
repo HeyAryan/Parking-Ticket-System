@@ -1,0 +1,155 @@
+<!-- component -->
+<link rel="stylesheet" href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" />
+
+<div class="min-h-screen flex flex-row bg-gray-100">
+  <div class="flex flex-col w-56 bg-white rounded-r-3xl overflow-hidden">
+    <div class="flex items-center justify-center h-20 shadow-md">
+      <h1 class="text-3xl uppercase text-indigo-500">Logo</h1>
+    </div>
+    <ul class="flex flex-col py-4">
+      <li>
+        <a href="#" class="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800">
+          <span class="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400"><i class="bx bx-home"></i></span>
+          <span class="text-sm font-medium">Dashboard</span>
+        </a>
+      </li>
+      <li>
+        <a class="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800 no-underline cursor-pointer" (click)="redirectToBookingHistory()">
+          <span class="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400"><i class="bx bx-history"></i></span>
+          <span class="text-sm font-medium">Booking History</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800">
+          <span class="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400"><i class="bx bx-drink"></i></span>
+          <span class="text-sm font-medium">Drink</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800">
+          <span class="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400"><i class="bx bx-shopping-bag"></i></span>
+          <span class="text-sm font-medium">Shopping</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800">
+          <span class="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400"><i class="bx bx-chat"></i></span>
+          <span class="text-sm font-medium">Chat</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800">
+          <span class="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400"><i class="bx bx-user"></i></span>
+          <span class="text-sm font-medium">Profile</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800">
+          <span class="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400"><i class="bx bx-bell"></i></span>
+          <span class="text-sm font-medium">Notifications</span>
+          <span class="ml-auto mr-6 text-sm bg-red-100 rounded-full px-3 py-px text-red-500">5</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800">
+          <span class="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400"><i class="bx bx-log-out"></i></span>
+          <span class="text-sm font-medium">Logout</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <!-- <div class="w-4/5 mx-auto mt-10">
+    <div class="container mx-auto">
+      <div class="flex flex-wrap justify-between">
+        <div class="w-full md:w-2/3 border-t border-gray-300">
+          <div class="p-8">
+            <div class="flex justify-center">
+              <h1 class="text-3xl font-bold">Your Parking Spaces</h1>
+            </div>
+            <div class="mt-8 space-y-6">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div *ngFor="let parking of parkingSpacesList;let i = index" class="bg-white shadow-md rounded-lg p-6">
+                  <h2 class="text-xl font-semibold text-gray-800">{{parking.name}}</h2>
+                  <div class="mt-4">
+                    <p class="text-gray-600">Price: {{parking.price}} INR</p>
+                    <p class="text-gray-600">Location: {{parking.address}}</p>
+                  </div>
+                  <div class="mt-6 flex justify-end">
+                    <button class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none focus:bg-blue-600" (click)="openParkingSpace(parking.id)">Checkout</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+  <!-- </div> -->
+  <div style="width: 100%;" >
+    <div class="d-flex justify-content-around mt-2 container" style="padding:20px;">
+        <span style="font-weight: bold;font-size: 18px;">
+            BOOK YOUR SLOT
+        </span>
+        <span class="statusStyle">
+            Total Slots: {{totalSlots}}
+        </span>
+        <span class="statusStyle">
+            Available Slots: {{availableSlots}}
+        </span>
+        <span class="statusStyle">
+            Your Booked Slots: {{yourBookedSlots}}
+        </span>
+    </div>
+    <div style="width: 100%;background-color: white;" class="container">
+        <div>
+            <div style="width:100%;height: 100%;background-color: white;padding:50px">
+                <div class="d-flex justify-content-start flex-wrap">
+                    <div *ngFor="let slot of parkingSlotsList;">
+                        <div [ngStyle]="getCardStyle(slot.status,slot.isSelected,slot.isBooked,slot.bookedByActiveUser)" style="min-height: 250px; width: 150px; margin-left: 10px; margin-right: 10px; border-radius: 15px; margin-top: 20px; background-color: orange; padding: 20px; position: relative;">
+                            <div>
+                                <div class="d-flex justify-content-center">
+                                    {{slot.slotId}}
+                                </div>
+                            </div>
+                            <div style="position: absolute; bottom: 10px; left: 0; right: 0; text-align: center;" *ngIf="slot.status == 'ACTIVE' && !slot.isBooked">
+                                <button class="btn btn-success" *ngIf="slot.isSelected" (click)="selectSlot(slot.id)"> Selected </button>
+                                <button class="btn btn-info" *ngIf="!slot.isSelected" (click)="selectSlot(slot.id)"> Select </button>
+                            </div>
+                            <div style="position: absolute; bottom: 10px; left: 0; right: 0; text-align: center;cursor: not-allowed;" *ngIf="slot.status == 'INACTIVE' || slot.status == 'ABANDONED'">
+                                <span style="font-size: 10px;color: red;background-color: white; padding:5px;border-radius: 5px;">It is closed</span>
+                            </div>
+                            <div style="position: absolute; bottom: 10px; left: 0; right: 0; text-align: center;cursor: not-allowed;" *ngIf="slot.status == 'ACTIVE'">
+                                <span *ngIf="(slot.isBooked && slot.bookedByActiveUser)" style="font-size: 10px;color: purple;background-color: white; padding:5px;border-radius: 5px;">Already Booked By You</span>
+                                <span *ngIf="(slot.isBooked && !slot.bookedByActiveUser)" style="font-size: 10px;color: purple;background-color: white; padding:5px;border-radius: 5px;">Already Booked By Someone </span>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div style="background-color:white;border-radius: 10px;position: fixed;bottom: 0; width: 100%;" class="mt-5 ">
+    <div class="d-flex justify-content-between container" style="padding: 25px;">
+        <div style="font-weight: bold; width: 40%;">
+            BOOKING DETAILS
+        </div>
+        <div class="d-flex justify-content-between" style="padding-left: 20px;width: 60%;">
+            <div class="d-flex flex-column" style="margin-left:10px;margin-right:10px">
+                <span>Slot Name</span>
+                <span style="font-weight: bold;">{{selectedSlotsName}}</span>
+            </div>
+            <div class="d-flex flex-column" style="margin-left:10px;margin-right:10px">
+                <span>Total Slots</span>
+                <span style="font-weight: bold;">{{selectedSlotsCount}}</span>
+            </div>
+            <div class="d-flex flex-column" style="margin-left:10px;margin-right:10px">
+                <span>Total Amount</span>
+                <span style="font-weight: bold;">{{selectSlotsAmount}}</span>
+            </div>
+            <div>
+                <button class="btn btn-primary" (click)="bookParkingSlot()">Book Slot</button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
